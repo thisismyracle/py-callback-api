@@ -12,8 +12,6 @@ app.include_router(math_router.router)
 
 
 if __name__ == '__main__':
-    try:
-        Threading.start_thread()
-        uvicorn.run('main:app', host='127.0.0.1', port=8000, reload=False)
-    except KeyboardInterrupt:
-        Threading.stop_thread()
+    Threading.start_thread()
+    uvicorn.run('main:app', host='127.0.0.1', port=8000, reload=False)
+    Threading.stop_thread()
